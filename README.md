@@ -9,3 +9,6 @@ run on almost any server and that there is no data to compromise there.
 The armory app is used to inspect account details and character information while not logged into the game. The API provides
 read-only access, so you won't be able to do anything other than inspect items or account info.
 </p>
+<p>
+The index page of this work is based on <a href="https://github.com/wporter82/gw2armory" target="_blank">Wayne Porter project</a>
+</p>
