@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="GW2Armory" ng-controller="MainController" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GW2 Armory - Character Info</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- AngularJS -->
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/ngStorage.js"></script>
+	<!-- Custom JS files -->
+	<script type="text/javascript" src="character.js"></script>
+</head>
+<body>
+
+	<div>{{error}}</div>
+
+	<div><h3>{{character.name}}</h3></div>
+	<div>Race : {{character.race}}</div>
+	<div>Genre : {{character.gender}}</div>
+	<div>Profession : {{character.profession}}</div>
+	<div>Niveau : {{character.level}}</div>
+	<div>Création : {{character.created | date}}</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Character jobs</div>
+		<div class="panel-body">
+			<div ng-repeat="job in character.crafting">
+				<span>{{job.discipline}}</span>
+				<div>Niveau : {{job.rating}} - Actif : {{job.active}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Character specialisations</div>
+		<div class="panel-body">
+			<div ng-repeat="(name,traits) in character.specializations">
+				<div><span>{{name}}</span> : Aptitudes {{traits}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Character armory</div>
+		<div class="panel-body">
+
+			<div ng-repeat="(name,item) in equipments">
+
+				<div ng-class="{{name}}">
+					<img ng-src="{{item.icon}}" witdth="32" height="32"></img>
+					<div>
+						<h3>{{item.name}} <span ng-repeat="upgrade in item.upgrades"> {{upgrade.suffix}}</span><h3>
+						<h4>Stats :</h4>
+						<p ng-repeat="attribut in item.attributes">{{attribut.attribute}} : +{{attribut.modifier}}</p>
+						<div>
+							<h4>Infusions :</h4>
+							<div ng-repeat="infusion in item.infusions">
+								 <img ng-src="{{infusion.icon}}" witdth="32" height="32"></img><span>{{infusion.name}}</span>
+								 <span>{{infusion.buff}}</span>
+							 </div>
+						</div>
+						<div>
+							<h4>Upgrades :</h4>
+							<div ng-repeat="upgrade in item.upgrades">
+								 <img ng-src="{{upgrade.icon}}" witdth="32" height="32"></img><span>{{upgrade.name}}</span>
+								 <p ng-repeat="bonus in upgrade.bonuses">{{bonus}}</p>
+							 </div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Character inventory</div>
+		<div class="panel-body">
+			<div ng-repeat="(name,item) in equipments">
+				<img ng-src="{{item.icon}}" witdth="32" height="32"></img>
+				<p>Nom : {{item.name}} <span ng-repeat="upgrade in item.upgrades"> {{upgrade.suffix}}</span></p>
+				<div>Emplacement : {{name}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
