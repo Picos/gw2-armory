@@ -8,6 +8,7 @@
   width: 677px;
   margin: auto;
   font-family: "Guild Wars 2 Font", Verdana, Tahoma;
+  margin-bottom: 200px;
 }
 
 .armory{
@@ -164,7 +165,7 @@
   background-color: rgba(230, 230, 240, 0.99);
   position: absolute;
   width: 300px;
-  top : 0px;
+  top:20px;
   left : 56px;
   border: 1px solid rgb(50, 50, 50);
   overflow: visible;
