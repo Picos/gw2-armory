@@ -94,6 +94,7 @@
 			type = "";
 			suffix = "";
 			rarity = "";
+			buff = "";
 			bonuses = [];
 		}
 
@@ -219,6 +220,13 @@
 								upgrade.type = response.data.details.type;
 								upgrade.suffix = response.data.details.suffix;
 								upgrade.bonuses = response.data.details.bonuses;
+								if(response.data.details.infix_upgrade != null && response.data.details.infix_upgrade != undefined)
+								{
+									if(response.data.details.infix_upgrade.buff != null && response.data.details.infix_upgrade.buff != undefined)
+									{
+											upgrade.buff = response.data.details.infix_upgrade.buff.description;
+									}
+								}
 								upgrade.rarity = response.data.rarity;
 							}
 						,onError);

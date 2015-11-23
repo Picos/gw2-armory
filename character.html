@@ -45,12 +45,13 @@
 					<div class="upgrades">
 						<div ng-repeat="infusion in item.infusions">
 							 <img ng-src="{{infusion.icon}}" ></img><span ng-class="infusion.rarity">{{infusion.name}}</span>
-							 <p>{{infusion.buff}}</p>
+							 <p ng-show="infusion.buff">{{infusion.buff}}</p>
 						 </div>
 					</div>
 					<div class="upgrades">
 						<div ng-repeat="upgrade in item.upgrades">
 							 <img ng-src="{{upgrade.icon}}" ></img><span ng-class="upgrade.rarity">{{upgrade.name}}</span>
+							 <p ng-show="upgrade.buff">{{upgrade.buff}}</p>
 							 <p ng-repeat="bonus in upgrade.bonuses">{{bonus}}</p>
 						 </div>
 					</div>
