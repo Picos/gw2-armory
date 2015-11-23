@@ -8,6 +8,7 @@
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/gw2armory.css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<!-- AngularJS -->
@@ -20,12 +21,50 @@
 
 	<div>{{error}}</div>
 
-	<div><h3>{{character.name}}</h3></div>
-	<div>Race : {{character.race}}</div>
-	<div>Genre : {{character.gender}}</div>
-	<div>Profession : {{character.profession}}</div>
-	<div>Niveau : {{character.level}}</div>
-	<div>Création : {{character.created | date}}</div>
+	<div class="character" >
+
+		<div class="info">
+			<div class="prim-info">
+				<div ng-class="character.profession" class="prof-icon"></div>
+				<div class="character-name"><h1>{{character.name}}</h3></div>
+				<div class="character-level">Niveau : {{character.level}}</div>
+			</div>
+			<div class="sub-info">
+				<div class="character-race">Race : {{character.race}}</div>
+				<div class="character-profession">Profession : {{character.profession}}</div>
+				<div class="character-gender">Genre : <img ng-src="img/{{character.gender}}.png"></img></div>
+				<div class="character-created">Création : {{character.created | date}}</div>
+			</div>
+		</div>
+
+		<div class="armory" ng-class="character.race">
+			<div ng-repeat="(name,item) in equipments" ng-class="[name,item.rarity]" class="item">
+				<img ng-src="{{item.icon}}"></img>
+				<div style="display:none;">
+					<h3>{{item.name}} <span ng-repeat="upgrade in item.upgrades"> {{upgrade.suffix}}</span><h3>
+					<h4>Stats :</h4>
+					<p ng-repeat="attribut in item.attributes">{{attribut.attribute}} : +{{attribut.modifier}}</p>
+					<div>
+						<h4>Infusions :</h4>
+						<div ng-repeat="infusion in item.infusions">
+							 <img ng-src="{{infusion.icon}}" witdth="32" height="32"></img><span>{{infusion.name}}</span>
+							 <span>{{infusion.buff}}</span>
+						 </div>
+					</div>
+					<div>
+						<h4>Upgrades :</h4>
+						<div ng-repeat="upgrade in item.upgrades">
+							 <img ng-src="{{upgrade.icon}}" witdth="32" height="32"></img><span>{{upgrade.name}}</span>
+							 <p ng-repeat="bonus in upgrade.bonuses">{{bonus}}</p>
+						 </div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
 
 	<div class="panel panel-default">
 		<div class="panel-heading">Character jobs</div>
@@ -46,50 +85,6 @@
 		</div>
 	</div>
 
-	<div class="panel panel-default">
-		<div class="panel-heading">Character armory</div>
-		<div class="panel-body">
-
-			<div ng-repeat="(name,item) in equipments">
-
-				<div ng-class="{{name}}">
-					<img ng-src="{{item.icon}}" witdth="32" height="32"></img>
-					<div>
-						<h3>{{item.name}} <span ng-repeat="upgrade in item.upgrades"> {{upgrade.suffix}}</span><h3>
-						<h4>Stats :</h4>
-						<p ng-repeat="attribut in item.attributes">{{attribut.attribute}} : +{{attribut.modifier}}</p>
-						<div>
-							<h4>Infusions :</h4>
-							<div ng-repeat="infusion in item.infusions">
-								 <img ng-src="{{infusion.icon}}" witdth="32" height="32"></img><span>{{infusion.name}}</span>
-								 <span>{{infusion.buff}}</span>
-							 </div>
-						</div>
-						<div>
-							<h4>Upgrades :</h4>
-							<div ng-repeat="upgrade in item.upgrades">
-								 <img ng-src="{{upgrade.icon}}" witdth="32" height="32"></img><span>{{upgrade.name}}</span>
-								 <p ng-repeat="bonus in upgrade.bonuses">{{bonus}}</p>
-							 </div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-
-	<div class="panel panel-default">
-		<div class="panel-heading">Character inventory</div>
-		<div class="panel-body">
-			<div ng-repeat="(name,item) in equipments">
-				<img ng-src="{{item.icon}}" witdth="32" height="32"></img>
-				<p>Nom : {{item.name}} <span ng-repeat="upgrade in item.upgrades"> {{upgrade.suffix}}</span></p>
-				<div>Emplacement : {{name}}</div>
-			</div>
-		</div>
-	</div>
 </div>
 </body>
 </html>

@@ -1,13 +1,14 @@
 (function(){
 	var app = angular.module("GW2Armory",["ngStorage"]);
-			
+
 	var StorageController = function($scope,$localStorage) {
 		$scope.save = function(key) {
 			$localStorage.APIKey = key;
+			window.location.reload;
 		}
-		
+
 	}
-	
+
 	var MainController = function($scope,$http,$localStorage) {
 
 		var onError = function(response) {
@@ -56,16 +57,16 @@
 
 		function getCharacters(APIKey) {
 			$http.get("https://api.guildwars2.com/v2/characters?access_token="+APIKey)
-				.then(onCharactersComplete,onError);	
+				.then(onCharactersComplete,onError);
 		}
 
 		$scope.load = function() {
 			$scope.APIKey = $localStorage.APIKey;
 		}
-		
+
 		$scope.load();
 		getAccount($scope.APIKey);
-				
+
 	}
 
 	app.controller('StorageController',['$scope','$localStorage',StorageController]);
