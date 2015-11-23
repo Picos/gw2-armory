@@ -190,38 +190,40 @@
 		function getInfusions(equipment)
 		{
 			for(var x=0; x < equipment.infusions.length; x++) {
-				var infusion = equipment.infusions[x];
-				$http.get("https://api.guildwars2.com/v2/items/"+infusion.id)
-					.then(
-						function(response) {
-							infusion.name = response.data.name;
-							infusion.icon = response.data.icon;
-							infusion.buff = response.data.details.infix_upgrade.buff.description;
-							infusion.rarity = response.data.rarity;
-						}
-					,function(response) {
-
-					});
+				function getinfusevalues(x){
+					var infusion = equipment.infusions[x];
+					$http.get("https://api.guildwars2.com/v2/items/"+infusion.id)
+						.then(
+							function(response) {
+								infusion.name = response.data.name;
+								infusion.icon = response.data.icon;
+								infusion.buff = response.data.details.infix_upgrade.buff.description;
+								infusion.rarity = response.data.rarity;
+							}
+						,onError);
+				}
+				getinfusevalues(x);
 			}
 		}
 
 		function getUpgrades(equipment)
 		{
 			for(var x=0; x < equipment.upgrades.length; x++) {
-				var upgrade = equipment.upgrades[x];
-				$http.get("https://api.guildwars2.com/v2/items/"+upgrade.id)
-					.then(
-						function(response) {
-							upgrade.name = response.data.name;
-							upgrade.icon = response.data.icon;
-							upgrade.type = response.data.details.type;
-							upgrade.suffix = response.data.details.suffix;
-							upgrade.bonuses = response.data.details.bonuses;
-							upgrade.rarity = response.data.rarity;
-						}
-					,function(response) {
-
-					});
+				function getupgradesvalues(x){
+					var upgrade = equipment.upgrades[x];
+					$http.get("https://api.guildwars2.com/v2/items/"+upgrade.id)
+						.then(
+							function(response) {
+								upgrade.name = response.data.name;
+								upgrade.icon = response.data.icon;
+								upgrade.type = response.data.details.type;
+								upgrade.suffix = response.data.details.suffix;
+								upgrade.bonuses = response.data.details.bonuses;
+								upgrade.rarity = response.data.rarity;
+							}
+						,onError);
+				}
+				getupgradesvalues(x);
 			}
 		}
 
