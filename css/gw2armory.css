@@ -7,7 +7,7 @@
   border: 1px solid black;
   width: 677px;
   margin: auto;
-
+  font-family: "Guild Wars 2 Font", Verdana, Tahoma;
 }
 
 .armory{
@@ -39,27 +39,40 @@
 
 /* Character information panel */
 .info{
-  font-family: "Guild Wars 2 Font", Verdana, Tahoma;
+  height: 96px;
+  position: relative;
+  cursor: pointer;
 }
 
-.info .prim-info{
-  height: 96px;
-}
-.info .prim-info .character-name h1{
+.info .character-name {
   font-size: 50px;
 }
-.info .prim-info .character-level {
+.info .character-level {
   font-size: 22px;
 }
 
-.info .sub-info .character-gender img{
+.info .character-gender img{
   width: 20px;
   height: 20px;
 }
 
 .info .sub-info{
-  display: none;
+  padding: 10px;
+  display:none;
+  position: absolute;
+  right: 10px;
+  top:60px;
+  background-color: rgba(150, 150, 150, 0.5);
+  border: 2px solid rgba(50, 50, 50, 0.5);
+  border-radius: 7px;
+  overflow: visible;
+  z-index: 100;
 }
+
+.info:hover .sub-info{
+  display:block;
+}
+
 
 /* Profession Image */
 .info .prof-icon{
@@ -137,46 +150,112 @@
   position: absolute;
   top : 0px;
   right : 0px;
-  border: 2px solid rgb(69, 46, 7);
+  border: 3px solid rgb(69, 46, 7);
+  cursor: pointer;
 }
 
 .armory .item img{
-  width: 56px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
 }
+
+.armory .item-description{
+  display: none;
+  background-color: rgba(230, 230, 240, 0.99);
+  position: absolute;
+  width: 300px;
+  top : 0px;
+  left : 56px;
+  border: 1px solid rgb(50, 50, 50);
+  overflow: visible;
+  padding:0px 10px 5px 10px;
+  font-size: 12px;
+  z-index: 100;
+}
+.armory .item-description h2{
+  font-size: 16px;
+}
+.armory .item-description p{
+  margin: 0px;
+}
+.armory .item-description h3{
+  font-size: 14px;
+}
+.armory .item-description h4{
+  font-size: 14px;
+}
+
+.armory .item-description .upgrades{
+  margin-top: 10px;
+}
+
+.armory .item .item-description img{
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.armory .item:hover .item-description{
+  display: block;
+}
+
 
 /* Color by rarity */
 
 .armory .item.Junk{
-  border: 2px solid #AAA;
+  border: 3px solid #AAA;
+}
+.armory .item.Junk h2{
+  color: #AAA;
 }
 
 .armory .item.Basic{
-  border: 2px solid #000;
+  border: 3px solid #000;
+}
+.armory .item.Basic .item-description h2, .armory .item .item-description span.Basic{
+  color: #000;
 }
 
 .armory .item.Fine{
-  border: 2px solid #62A4DA;
+  border: 3px solid #62A4DA;
+}
+.armory .item.Fine .item-description h2, .armory .item .item-description span.Fine{
+  color: #62A4DA;
 }
 
 .armory .item.Masterwork{
-  border: 2px solid #1A9306;
+  border: 3px solid #1A9306;
+}
+.armory .item.Masterwork .item-description h2, .armory .item .item-description span.Masterwork{
+  color: #1A9306;
 }
 
 .armory .item.Rare{
-  border: 2px solid #FCD00B;
+  border: 3px solid #FCD00B;
+}
+.armory .item.Rare .item-description h2, .armory .item .item-description span.Rare{
+  color: #FCD00B;
 }
 
 .armory .item.Exotic{
-  border: 2px solid #FFA405;
+  border: 3px solid #FFA405;
+}
+.armory .item.Exotic .item-description h2, .armory .item .item-description span.Exotic{
+  color: #FFA405;
 }
 
 .armory .item.Ascended{
-  border: 2px solid #FB3E8D;
+  border: 3px solid #FB3E8D;
+}
+.armory .item.Ascended .item-description h2, .armory .item .item-description span.Ascended{
+  color: #FB3E8D;
 }
 
 .armory .item.Legendary{
-  border: 2px solid #4C139D;
+  border: 3px solid #4C139D;
+}
+.armory .item.Legendary .item-description h2, .armory .item .item-description span.Legendary{
+  color: #4C139D;
 }
 
 /* Left */

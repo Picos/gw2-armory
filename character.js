@@ -84,7 +84,7 @@
 			name = "";
 			icon = "";
 			buff = "";
-
+			rarity = "";
 		}
 
 		function myupgrade(){
@@ -93,6 +93,7 @@
 			icon = "";
 			type = "";
 			suffix = "";
+			rarity = "";
 			bonuses = [];
 		}
 
@@ -196,7 +197,7 @@
 							infusion.name = response.data.name;
 							infusion.icon = response.data.icon;
 							infusion.buff = response.data.details.infix_upgrade.buff.description;
-
+							infusion.rarity = response.data.rarity;
 						}
 					,function(response) {
 
@@ -216,7 +217,7 @@
 							upgrade.type = response.data.details.type;
 							upgrade.suffix = response.data.details.suffix;
 							upgrade.bonuses = response.data.details.bonuses;
-
+							upgrade.rarity = response.data.rarity;
 						}
 					,function(response) {
 
