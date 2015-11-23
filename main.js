@@ -4,9 +4,12 @@
 	var StorageController = function($scope,$localStorage) {
 		$scope.save = function(key) {
 			$localStorage.APIKey = key;
-			window.location.reload;
+			window.location.reload();
 		}
-
+		$scope.reset = function() {
+			$localStorage.APIKey = "";
+			window.location.reload();
+		}
 	}
 
 	var MainController = function($scope,$http,$localStorage) {
@@ -62,6 +65,11 @@
 
 		$scope.load = function() {
 			$scope.APIKey = $localStorage.APIKey;
+		}
+		$scope.resetApiKey = function() {
+			$localStorage.APIKey = "";
+			$scope.APIKey = $localStorage.APIKey;
+			window.location.reload;
 		}
 
 		$scope.load();
