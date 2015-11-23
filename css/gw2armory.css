@@ -1,0 +1,298 @@
+@font-face {
+    font-family: "Guild Wars 2 Font";
+    src: url(../fonts/caesar.ttf) format("truetype");
+}
+
+.character{
+  border: 1px solid black;
+  width: 677px;
+  margin: auto;
+
+}
+
+.armory{
+  background-image: url(../img/human.jpg);
+  width: 675px;
+  height:900px;
+  position: relative;
+}
+/* Raciale image */
+.armory.Charr{
+  background-image: url(../img/charr.jpg);
+}
+
+.armory.Human{
+  background-image: url(../img/human.jpg);
+}
+
+.armory.Sylvari{
+  background-image: url(../img/sylvari.jpg);
+}
+
+.armory.Asura{
+  background-image: url(../img/asura.jpg);
+}
+
+.armory.Norn{
+  background-image: url(../img/norn.jpg);
+}
+
+/* Character information panel */
+.info{
+  font-family: "Guild Wars 2 Font", Verdana, Tahoma;
+}
+
+.info .prim-info{
+  height: 96px;
+}
+.info .prim-info .character-name h1{
+  font-size: 50px;
+}
+.info .prim-info .character-level {
+  font-size: 22px;
+}
+
+.info .sub-info .character-gender img{
+  width: 20px;
+  height: 20px;
+}
+
+.info .sub-info{
+  display: none;
+}
+
+/* Profession Image */
+.info .prof-icon{
+  float: left;
+}
+
+.info .Revenant{
+  background-image: url(../img/revenant.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+.info .Warrior{
+  background-image: url(../img/warrior.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+.info .Thief{
+  background-image: url(../img/thief.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+.info .Ranger{
+  background-image: url(../img/ranger.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+.info .Necromancer{
+  background-image: url(../img/necromancer.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+.info .Mesmer{
+  background-image: url(../img/mesmer.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+.info .Engineer{
+  background-image: url(../img/engineer.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+.info .Elementalist{
+  background-image: url(../img/elementalist.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+.info .Guardian{
+  background-image: url(../img/guardian.png);
+  background-size: contain;
+  width: 96px;
+  height: 96px;
+}
+
+/* Items positionning */
+.armory .item{
+  width: 60px;
+  height: 60px;
+  background-color: rgb(155, 155, 155);
+  position: absolute;
+  top : 0px;
+  right : 0px;
+  border: 2px solid rgb(69, 46, 7);
+}
+
+.armory .item img{
+  width: 56px;
+  height: 56px;
+}
+
+/* Color by rarity */
+
+.armory .item.Junk{
+  border: 2px solid #AAA;
+}
+
+.armory .item.Basic{
+  border: 2px solid #000;
+}
+
+.armory .item.Fine{
+  border: 2px solid #62A4DA;
+}
+
+.armory .item.Masterwork{
+  border: 2px solid #1A9306;
+}
+
+.armory .item.Rare{
+  border: 2px solid #FCD00B;
+}
+
+.armory .item.Exotic{
+  border: 2px solid #FFA405;
+}
+
+.armory .item.Ascended{
+  border: 2px solid #FB3E8D;
+}
+
+.armory .item.Legendary{
+  border: 2px solid #4C139D;
+}
+
+/* Left */
+.armory .Helm{
+  top:100px;
+  left: 20px;
+}
+
+.armory .Shoulders{
+  top: 200px;
+  left: 20px;
+}
+
+.armory .Coat{
+  top: 300px;
+  left: 20px;
+}
+
+.armory .Gloves{
+  top: 400px;
+  left: 20px;
+}
+
+.armory .Leggings{
+  top: 500px;
+  left: 20px;
+}
+
+.armory .Boots{
+  top: 600px;
+  left: 20px;
+}
+
+/* Weapons */
+
+.armory .WeaponA1{
+  top: 700px;
+  left: 20px;
+}
+
+.armory .WeaponA2{
+  top: 700px;
+  left: 90px;
+}
+
+.armory .WeaponB1{
+  top: 780px;
+  left: 20px;
+}
+
+.armory .WeaponB2{
+  top: 780px;
+  left: 90px;
+}
+
+/* Right */
+
+.armory .Backpack{
+  top: 100px;
+  right: 20px;
+}
+
+.armory .Amulet{
+  top: 200px;
+  right: 20px;
+}
+
+.armory .Accessory1{
+  top: 300px;
+  right: 20px;
+}
+
+.armory .Accessory2{
+  top: 400px;
+  right: 20px;
+}
+
+.armory .Ring1{
+  top: 500px;
+  right: 20px;
+}
+
+.armory .Ring2{
+  top: 600px;
+  right: 20px;
+}
+
+/* Underwater */
+
+.armory .HelmAquatic{
+  top: 700px;
+  right: 20px;
+}
+
+.armory .WeaponAquaticA{
+  top: 700px;
+  right: 90px;
+}
+
+.armory .WeaponAquaticB{
+  top: 700px;
+  right: 160px;
+}
+
+/* Gathering tools */
+.armory .Sickle{
+  top: 810px;
+  right: 160px;
+}
+
+.armory .Axe{
+  top: 810px;
+  right: 90px;
+}
+
+.armory .Pick{
+  top: 810px;
+  right: 20px;
+}
